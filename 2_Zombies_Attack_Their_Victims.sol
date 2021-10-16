@@ -26,7 +26,7 @@ contract ZombieFeeding is ZombieFactory { //Inherit the properties of ZombieFact
   KittyInterface kittyContract = KittyInterface(ckAddress);
 
   function feedAndMultiply(uint _zombieId, uint _targetDna) public {
-    require(msg.sender == zombieToOwner[_zombieId]); //check if msg.sender address is already part of the zombie array - he should a ZOMBIE
+    require(msg.sender == zombieToOwner[_zombieId]); //check if msg.sender address is already part of the zombie array - he should be a ZOMBIE
     Zombie storage myZombie = zombies[_zombieId];
     _targetDna = _targetDna % dnaModulus;
     uint newDna = (myZombie.dna + _targetDna) / 2;
